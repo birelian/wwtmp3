@@ -2,23 +2,47 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.birelian</groupId>
-	<artifactId>tests-mp3test</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>wwtmp3-player</artifactId>
+	<version>1.0.0-RELEASE</version>
+
 	<dependencies>
+
 		<dependency>
-		    <groupId>javazoom</groupId>
-		    <artifactId>jlayer</artifactId>
-		    <version>1.0.1</version>
+			<groupId>javazoom</groupId>
+			<artifactId>jlayer</artifactId>
+			<version>1.0.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jmx-gui</artifactId>
 			<version>2.0-beta9</version>
 		</dependency>
+
 		<dependency>
-		    <groupId>org</groupId>
-		    <artifactId>jaudiotagger</artifactId>
-		    <version>2.0.3</version>
+			<groupId>org</groupId>
+			<artifactId>jaudiotagger</artifactId>
+			<version>2.0.3</version>
 		</dependency>
+
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>net.birelian.mp3player.ui.MainWindow</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
